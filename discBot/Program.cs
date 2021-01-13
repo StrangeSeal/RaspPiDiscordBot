@@ -61,21 +61,13 @@ namespace csharpi
             return Task.CompletedTask;
         }
 
-        //I wonder if there's a better way to handle commands (spoiler: there is :))
+       
         private async Task MessageReceivedAsync(SocketMessage message)
         {
             //This ensures we don't loop things by responding to ourselves (as the bot)
             if (message.Author.Id == _client.CurrentUser.Id)
                 return;
-
-            if (message.Content == "hello")
-            {
-                await message.Channel.SendMessageAsync("Josh, Wesley and Nick are little CukBoiz!");
-            }  
-               if (message.Content == "what about Chuck")
-            {
-                await message.Channel.SendMessageAsync("Chuck is the Cuckiest Cuck of all Christmas Cuckz!");
-            } 
+        
         }
     }
 }
